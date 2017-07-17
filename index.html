@@ -25,17 +25,48 @@
             bottom: 100%;  
             background-color: aliceblue;
             border: 1px solid grey;
+            display: flex;
+            justify-content: flex-start;
         }
-        #gamePlace{
+        #gameCanvas{
             width: 600px;
             height:600px;
             border-right: 1px solid grey;
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 200px;
+        }
+        .buttons button{
+            width: 150px;
+            height: 50px;
+        }
+        #start{
+            background-color: chartreuse;
+        }
+        #pause{
+            background-color: yellow;
+        }
+        #stop{
+            background-color: red;
+        }
+        #restart{
+            background-color: deepskyblue;
         }
     </style>
 </head>
 <body>
     <div class="gamePlace">
-       <canvas id="gamePlace"> 
+       <canvas id="gameCanvas"></canvas> 
+       <div class="buttons">
+           <button id="start">Start</button>
+           <button id="pause">Pause</button>
+           <button id="stop">Stop</button>
+           <button id="restart">Restart</button>
+       </div>
     </div>
 </body>
 </html>
