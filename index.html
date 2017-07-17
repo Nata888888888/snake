@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        html, body {
+            width: 99%;
+            height: 99%;
+        }
+        body {
+            background-color: darkgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gamePlace{
+            margin: auto;
+            width: 800px;
+            height: 600px;
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 100%;
+            bottom: 100%;  
+            background-color: aliceblue;
+            border: 1px solid grey;
+        }
+        #gamePlace{
+            width: 600px;
+            height:600px;
+            border-right: 1px solid grey;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="gamePlace">
+       <canvas id="gamePlace"> 
+    </div>
 </body>
 </html>
