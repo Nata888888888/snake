@@ -222,7 +222,7 @@ function renderFrame() {
 }
 
 function isGameOver() {
-    if (snakeY == 0) {
+    if (snakeCoords[0][0]==0 || snakeCoords[0][1]==0 || snakeCoords[0][0]==count_col-1 || snakeCoords[0][1]==count_row-1) {
         return true;
     }
     
@@ -260,10 +260,12 @@ function handlePhysics() {
 
 function frame() {
     renderFrame();
-    handlePhysics();
     if (isGameOver()) {
         clearInterval(frameTimer);
+        showGameOver();
+        return;
     }
+    handlePhysics();
 } 
 
 function activateSnake(x, y) {
@@ -292,6 +294,27 @@ function getChar(event) {
     frame();
     clearInterval(frameTimer);
     frameTimer = setInterval(frame, 500);
+}
+function showGameOver(){
+    var div = document.createElement('div');
+    
+    div.style.width = '300px';
+    div.style.height = '300px';
+    div.style.backgroundColor = 'white';
+    div.innerHTML = 'Game over!';
+    div.style.color = 'red';
+    div.style.fontSize = "30px";
+    div.style.textAlign = "center";
+    div.style.paddingTop = "120px";
+    div.style.boxSizing = "border-box";
+    div.style.position = "absolute";
+    div.style.top = "25%";
+    div.style.left = "20%";
+//    div.style.bottom = "100%";
+//    div.style.right = "100%";
+    div.style.margin = "auto";
+    var gp = document.getElementsByClassName('gamePlace');
+    gp[0].appendChild(div);
 }
 
 activateSnake();
